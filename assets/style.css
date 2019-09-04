@@ -1,9 +1,12 @@
 /* general */
 
-a, 
-p,
-div {
+.text-gen { /*general text*/
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-gen { /*general title*/
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
 }
 
 /* fixed navbar */
@@ -45,6 +48,7 @@ div {
 /* 1 countainer */
 
 .first-cont {
+    background-color: aqua;
     height: auto;
     width:100%;
 }

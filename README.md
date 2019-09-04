@@ -14,6 +14,6 @@ This project is a clone of Newsweek website that used mainly bootstrap to style.
 * HTML5
 * CSS3
 
-## Author - click on the link below to see the authors' github
+## Author - click on the link below to see the author's github
 
 * <a href="https://github.com/thsvr"> Github: Thaís Vieira Azevedo</a>

@@ -9,6 +9,24 @@
     font-weight: bold;
 }
 
+.red-color {
+    color:#f72210;
+}
+
+.grey-text {
+    color: #333;
+}
+
+.title-gen-1:hover {
+    cursor: pointer;
+    text-decoration: underline red;
+}
+
+img {
+    cursor: pointer;
+}
+
+
 /* fixed navbar */
 
 .navbar {

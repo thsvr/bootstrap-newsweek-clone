@@ -6,7 +6,6 @@
 
 .title-gen { /*general title*/
     font-family: "Roboto Condensed", sans-serif;
-    font-weight: bold;
 }
 
 .red-color {
@@ -29,6 +28,14 @@ img {
 
 .title-15 {
     font-size: 15px;
+}
+
+.line-h-18 {
+    line-height: 18px;
+}
+.hover-red:hover {
+    color: #f72210;
+    cursor: pointer;
 }
 
 
@@ -71,7 +78,7 @@ img {
 /* 1 countainer */
 
 .first-cont {
-    background-color: aqua;
+    background-color: papayawhip;
     height: auto;
     width:100%;
 }

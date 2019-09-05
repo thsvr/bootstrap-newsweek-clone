@@ -109,5 +109,11 @@ img {
 .jbt-btn:hover {
     background-color:#272727 ;
     color:#c2d4d7;
+}
 
+/* images right */
+
+.img-right-1 {
+    height: 90px;
+    width: 135px;
 }

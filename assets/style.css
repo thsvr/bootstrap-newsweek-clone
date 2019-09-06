@@ -38,6 +38,14 @@ img {
     cursor: pointer;
 }
 
+.square-red {
+    background-color: #f72210;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
 
 /* fixed navbar */
 

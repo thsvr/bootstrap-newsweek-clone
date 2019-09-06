@@ -46,6 +46,10 @@ img {
     cursor: pointer;
 }
 
+.hover-grey:hover {
+    background-color: #c2d4d7;
+}
+
 
 /* fixed navbar */
 

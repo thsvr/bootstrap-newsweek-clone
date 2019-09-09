@@ -176,3 +176,7 @@ img {
 .fa-tumblr:hover {
     color: #34526f;
 }
+
+.black-hover:hover {
+    color:black;
+}

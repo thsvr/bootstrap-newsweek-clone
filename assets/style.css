@@ -147,3 +147,32 @@ img {
 .subs-right {
     width: 60%;
 }
+
+.logo-size {
+    width: 250px;
+}
+
+.icon-size {
+    font-size: 25px;
+}
+
+.fa-facebook-square:hover {
+    color:#4267b2;
+    
+}
+
+.fa-twitter:hover {
+    color:#38A1F3;
+}
+
+.fa-linkedin-in:hover {
+    color:#0077B5;
+}
+
+.fa-instagram:hover {
+    color:blue;
+}
+
+.fa-tumblr:hover {
+    color: #34526f;
+}

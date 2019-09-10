@@ -17,6 +17,14 @@
     line-height: 20px;
 }
 
+.grey-light {
+    color: #B0B0B0;
+}
+
+.bg-grey-light {
+    background-color: #F5F5F5;
+}
+
 .title-gen-1:hover {
     cursor: pointer;
     text-decoration: underline red;

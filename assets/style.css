@@ -181,3 +181,17 @@ img {
 .black-hover:hover {
     color:black;
 }
+
+.mg-herb {
+    position: relative;
+    bottom: 60%;
+    left: 20%;
+}
+
+.text-white {
+    color: white;
+}
+
+.height-mg {
+    height: 315px;
+}

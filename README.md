@@ -3,7 +3,7 @@ This project is a clone of Newsweek website that used mainly bootstrap to style.
 
 ## Live Version
 
-<a href="#"> Live Version in progress</a>
+<a href="https://raw.githack.com/thsvr/bootstrap-newsweek-clone/master/index.html"> Live Version</a>
 
 ## Original Version
 
@@ -13,6 +13,7 @@ This project is a clone of Newsweek website that used mainly bootstrap to style.
 
 * HTML5
 * CSS3
+* Bootstrap
 
 ## Author - click on the link below to see the author's github
 

@@ -19,10 +19,47 @@
 </head>
 
 
-<body>
+<header>
+  <!-- navbar fixed lg and xl screen-->
+  <nav class="d-none d-lg-flex flex-column d-sm-none sticky-top p-2 mb-2">
+      <div id="top-nav" class="top-nav d-flex flex-row justify-content-between align-items-end pb-3 square-red">
+        <div id="date" class="date text-white pl-4">
+          <p>Wed, Sep 11, 2019</p>
+        </div>
+        <div id="top-logo" class="top-logo c-pointer">
+          <img src="assets/images/test-logo.jpg">
+        </div>
+        <div class="sign-in">
+          <span class="font-weight-bold text-white">SIGN IN</span>
+          <button class="bg-white font-weight-bold rounded-0 px-2 mx-2 red-color">SUBSCRIBE<i class="fas fa-angle-right"></i></button>
+        </div>
+      </div>
 
-  <!-- navbar fixed -->
-  <nav class="square-red sticky-top p-2 mb-2">
+      <div id="bottom-nav" class="bottom-nav">
+        <ul id="menu-list">
+          <li><a href="#">U.S.</a></li>
+          <li><a href="#">World</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Tech & Science</a></li>
+          <li><a href="#">Culture</a></li>
+          <li><a href="#">Newsgeek</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Health</a></li>
+          <li><a href="#">Opinion</a></li>
+          <li><a href="#">Vantage</a></li>
+        </ul>
+        <div class="search-bar">
+          <div>
+            <input type="text" name="seach" placeholder="Search" />
+            <span><i class="fas fa-search"></i></span>
+          </div>
+        </div>
+      </div>
+    
+  </nav><!-- end of lg/xl navbar -->
+
+  <!-- navbar fixed sm and md screen-->
+  <nav class="square-red d-lg-none sticky-top p-2 mb-2">
     <div class="d-flex flex-row justify-content-between parent-fixed-nav ">
 
       <div class="d-flex align-items-center">
@@ -36,9 +73,10 @@
       </div>
 
     </div>
-  </nav> <!-- end of navbar -->
+  </nav> <!-- end of sm/md navbar -->
+</header>
 
-
+<body>
   <!-- 1 container -->
   <div class="container-fluid border-bottom">
 
@@ -590,7 +628,7 @@
       <div class="col-lg-3 col-md-3 col-sm-12">
         <div class="card border-0">
           <img class="card-img-top rounded-0" src="assets/images/img-cont2-1.jpg" alt="herb">
-          <div class="card-body d-flex pb-0 pt-2">
+          <div class="d-flex pb-0 pt-2">
             <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">September 20 issue</p>
           </div>
           <div class="mt-0 pt-0 d-flex justify-content-center px-2">

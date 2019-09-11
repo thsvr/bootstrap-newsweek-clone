@@ -21,7 +21,7 @@
 
 <header>
   <!-- navbar fixed lg and xl screen-->
-  <nav class="d-none d-lg-flex flex-column d-sm-none sticky-top p-2 mb-2">
+  <nav class=" sticky-top d-none d-lg-flex flex-column d-sm-none p-2 mb-2">
       <div id="top-nav" class="top-nav d-flex flex-row justify-content-between align-items-end pb-3 square-red">
         <div id="date" class="date text-white pl-4">
           <p>Wed, Sep 11, 2019</p>
@@ -35,20 +35,29 @@
         </div>
       </div>
 
-      <div id="bottom-nav" class="bottom-nav">
-        <ul id="menu-list">
-          <li><a href="#">U.S.</a></li>
-          <li><a href="#">World</a></li>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Tech & Science</a></li>
-          <li><a href="#">Culture</a></li>
-          <li><a href="#">Newsgeek</a></li>
-          <li><a href="#">Sports</a></li>
-          <li><a href="#">Health</a></li>
-          <li><a href="#">Opinion</a></li>
-          <li><a href="#">Vantage</a></li>
+      <div id="bottom-nav" class="bottom-nav d-flex flex-row border-bottom border-light">
+        <ul id="menu-list" class="d-flex flex-row black-c font-weight-bold pt-2">
+          <li class="hover-red px-2">U.S.</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">World</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Business</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Tech & Science</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Culture</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Newsgeek</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Sports</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Health</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Opinion</li>
+          <li class="grey-light font-weight-bold px-2">|</li>
+          <li class="hover-red px-2">Vantage</li>
         </ul>
-        <div class="search-bar">
+        <div class="search-bar pt-2">
           <div>
             <input type="text" name="seach" placeholder="Search" />
             <span><i class="fas fa-search"></i></span>

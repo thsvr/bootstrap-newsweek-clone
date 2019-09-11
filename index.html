@@ -1,1367 +1,2411 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap css etc -->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+    <title>Newsweek Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="http://s.newsweek.com/sites/www.newsweek.com/themes/newsweek/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+  </head>
 
-  <!-- bootstrap css etc -->
-  <link rel="stylesheet" type="text/css" href="assets/reset.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="assets/style.css" />
-  <title>Newsweek Clone</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link rel="shortcut icon" href="http://s.newsweek.com/sites/www.newsweek.com/themes/newsweek/favicon.ico"
-    type="image/vnd.microsoft.icon" />
-</head>
-
-
-<header>
-  <!-- navbar fixed lg and xl screen-->
-  <nav class=" sticky-top d-none d-lg-flex flex-column d-sm-none p-2 mb-2">
-      <div id="top-nav" class="top-nav d-flex flex-row justify-content-between align-items-end pb-3 square-red">
-        <div id="date" class="date text-white pl-4">
-          <p>Wed, Sep 11, 2019</p>
+  <body>
+    <header>
+      <!-- navbar fixed lg and xl screen-->
+      <nav class=" sticky-top d-none d-lg-flex flex-column d-sm-none p-2 mb-2">
+        <div
+          id="top-nav"
+          class="top-nav d-flex flex-row justify-content-between align-items-end pb-3 square-red"
+        >
+          <div id="date" class="date text-white pl-4">
+            <p>Wed, Sep 11, 2019</p>
+          </div>
+          <div id="top-logo" class="top-logo c-pointer">
+            <img src="assets/images/test-logo.jpg" alt="#" />
+          </div>
+          <div class="sign-in">
+            <span class="font-weight-bold text-white">SIGN IN</span>
+            <button
+              class="bg-white font-weight-bold rounded-0 px-2 mx-2 red-color"
+            >
+              SUBSCRIBE<i class="fas fa-angle-right"></i>
+            </button>
+          </div>
         </div>
-        <div id="top-logo" class="top-logo c-pointer">
-          <img src="assets/images/test-logo.jpg">
-        </div>
-        <div class="sign-in">
-          <span class="font-weight-bold text-white">SIGN IN</span>
-          <button class="bg-white font-weight-bold rounded-0 px-2 mx-2 red-color">SUBSCRIBE<i class="fas fa-angle-right"></i></button>
-        </div>
-      </div>
 
-      <div id="bottom-nav" class="bottom-nav d-flex flex-row border-bottom border-light">
-        <ul id="menu-list" class="d-flex flex-row black-c font-weight-bold pt-2">
-          <li class="hover-red px-2">U.S.</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">World</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Business</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Tech & Science</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Culture</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Newsgeek</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Sports</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Health</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Opinion</li>
-          <li class="grey-light font-weight-bold px-2">|</li>
-          <li class="hover-red px-2">Vantage</li>
-        </ul>
-        <div class="search-bar pt-2">
+        <div
+          id="bottom-nav"
+          class="bottom-nav d-flex flex-row border-bottom border-light"
+        >
+          <ul
+            id="menu-list"
+            class="d-flex flex-row black-c font-weight-bold pt-2"
+          >
+            <li class="hover-red px-2">U.S.</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">World</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Business</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Tech & Science</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Culture</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Newsgeek</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Sports</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Health</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Opinion</li>
+            <li class="grey-light font-weight-bold px-2">|</li>
+            <li class="hover-red px-2">Vantage</li>
+          </ul>
+          <div class="search-bar pt-2">
+            <div>
+              <input type="text" name="seach" placeholder="Search" />
+              <span><i class="fas fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- end of lg/xl navbar -->
+
+      <!-- navbar fixed sm and md screen-->
+      <nav class="square-red d-lg-none sticky-top p-2 mb-2">
+        <div class="d-flex flex-row justify-content-between parent-fixed-nav ">
+          <div class="d-flex align-items-center">
+            <a
+              class="navbar-brand text-white font-weight-bold logo-news text-gen"
+              href="#"
+              >Newsweek</a
+            >
+          </div>
+
+          <div
+            class=" d-flex justify-content-end align-items-center parent-subscribe"
+          >
+            <p class="text-white font-weight-bold mt-3 pr-2 sign-nav text-gen">
+              SIGN IN
+            </p>
+            <button class="bg-white butt-nav font-weight-bold text-gen">
+              SUBSCRIBE >
+            </button>
+            <i class="fas fa-bars bar font-weight-bold pl-3"></i>
+          </div>
+        </div>
+      </nav>
+      <!-- end of sm/md navbar -->
+    </header>
+
+    <!-- 1 container -->
+    <div class="container-fluid border-bottom">
+      <div class="row">
+        <!-- left content -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
           <div>
-            <input type="text" name="seach" placeholder="Search" />
-            <span><i class="fas fa-search"></i></span>
-          </div>
-        </div>
-      </div>
-    
-  </nav><!-- end of lg/xl navbar -->
-
-  <!-- navbar fixed sm and md screen-->
-  <nav class="square-red d-lg-none sticky-top p-2 mb-2">
-    <div class="d-flex flex-row justify-content-between parent-fixed-nav ">
-
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand text-white font-weight-bold logo-news text-gen" href="#">Newsweek</a>
-      </div>
-
-      <div class=" d-flex justify-content-end align-items-center parent-subscribe">
-        <p class="text-white font-weight-bold mt-3 pr-2 sign-nav text-gen">SIGN IN</p>
-        <button class="bg-white butt-nav font-weight-bold text-gen">SUBSCRIBE > </button>
-        <i class="fas fa-bars bar font-weight-bold pl-3"></i>
-      </div>
-
-    </div>
-  </nav> <!-- end of sm/md navbar -->
-</header>
-
-<body>
-  <!-- 1 container -->
-  <div class="container-fluid border-bottom">
-
-
-    <div class="row">
-
-      <!-- left content -->
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div>
-          <p class="grey-light title-gen text-uppercase font-weight-bold">FEATURED STORIES</p>
-        </div>
-
-        <div class="card border-0">
-          <!--card 1-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-1.jpeg" alt="boy">
-            <div class="position-absolute">
-              <a class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light" href="#">WORLD</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Despite Dangers of Life in Honduras,
-              Meet the Kids Determined to Stay</h5>
-            <p class="card-text grey-text">"When we grow up, what would I tell my kids if I were to flee?" says
-              15-year-old Edin Javier Alvarez Vazquez.</p>
-          </div>
-        </div>
-
-        <div class="card border-0">
-          <!--card 2-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-2.jpeg" alt="boy">
-            <div class="position-absolute">
-              <a class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light" href="#">U.S.</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Using Military Funds for Wall Is
-              'Slap in the Face' for Forces: Schumer</h5>
-            <p class="card-text grey-text">President Donald Trump is "willing to cannibalize already allocated military
-              funding to boost his own ego, and for a wall he promised Mexico would pay to build," said Senate Minority
-              Leader Chuck Schumer.</p>
-          </div>
-        </div>
-
-        <div class="card border-0">
-          <!--card 3-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-3.jpeg" alt="boy">
-            <div class="position-absolute">
-              <a class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light" href="#">WORLD</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Brazil's Tourism Ambassador Calls
-              Amazon Fires 'False,' Threatens Macron</h5>
-            <p class="card-text grey-text">Renzo Gracie also attacked Macron's wife, Brigitte, by saying, "the fact that
-              he is sleeping with the dragon does not make him a fire expert."</p>
-          </div>
-        </div>
-
-        <div class="card border-0">
-          <!--card 4-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-4.png" alt="boy">
-            <div class="position-absolute">
-              <a class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light" href="#">ANALYSIS</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">The Newsweek Momentum Awards</h5>
-            <p class="card-text grey-text">The Newsweek Momentum Awards will recognize five individuals around the
-              globe, as well as one city, which will be chosen as the "smartest city in the world."</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <!--card 5-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-5.jpeg" alt="boy">
-            <div class="position-absolute">
-              <a class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light" href="#">SPONSORED INSIGHT</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Why You Should Be An Engineer & Why
-              ABET Is Important to that Path.</h5>
-            <p class="card-text grey-text">Do you dream of changing the world? Do you want to make a practical
-              difference in people’s lives? Engineers do both these things. Find out how to join them.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <!--card 6-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-6.jpg" alt="boy">
-            <div class="position-absolute">
-              <a class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light" href="#">SPONSORED INSIGHT</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Infertility - A look at the leading
-              clinics in the field</h5>
-            <p class="card-text grey-text">There can be family related, culturally linked, and even political reasons
-              why prospective parents face significant challenges seeking conception treatment. Who can they turn to?
+            <p class="grey-light title-gen text-uppercase font-weight-bold">
+              FEATURED STORIES
             </p>
           </div>
-        </div>
 
-        <div class="card">
-          <!--card 7-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top rounded-0" src="assets/images/img-ft-7.png" alt="boy">
-            <div class="position-absolute">
-              <a class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light" href="#">SURVEY</a>
+          <div class="card border-0">
+            <!--card 1-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-1.jpeg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light"
+                  href="#"
+                  >WORLD</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Despite Dangers of Life in Honduras, Meet the Kids Determined to
+                Stay
+              </h5>
+              <p class="card-text grey-text">
+                "When we grow up, what would I tell my kids if I were to flee?"
+                says 15-year-old Edin Javier Alvarez Vazquez.
+              </p>
             </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Best Nursing Home</h5>
-            <p class="card-text grey-text">Newsweek is partnering with the respected global data research firm Statista
-              Inc. to establish a ranking of Best Nursing Homes. The final rankings will be published in Newsweek
-              magazine and on Newsweek.com</p>
-          </div>
-        </div>
 
-      </div> <!-- end left content -->
-
-      <!-- center content-->
-      <div class="col-lg-5 col-md-6 col-sm-12">
-        <div>
-          <p class="grey-light title-gen text-uppercase font-weight-bold">TOP STORY</p>
-        </div>
-
-        <div class="card">
-          <!--card-->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top" src="assets/images/img-center-1.jpg" alt="boy">
-            <div class="position-absolute">
-              <a class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light" href="#">NEWS</a>
+          <div class="card border-0">
+            <!--card 2-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-2.jpeg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light"
+                  href="#"
+                  >U.S.</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Using Military Funds for Wall Is 'Slap in the Face' for Forces:
+                Schumer
+              </h5>
+              <p class="card-text grey-text">
+                President Donald Trump is "willing to cannibalize already
+                allocated military funding to boost his own ego, and for a wall
+                he promised Mexico would pay to build," said Senate Minority
+                Leader Chuck Schumer.
+              </p>
             </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">How Hong Kong Protesters'
-              'Tenacious' Tactics Are Confounding Police and China</h5>
-            <p class="card-text grey-text">The leaderless crowds direct each other via encrypted messaging apps,
-              creating a fluid, adaptable and stubborn mass street protests movement.</p>
-          </div>
-        </div>
 
-        <div class="mb-2 mt-5 bg-light pt-2">
-          <!-- culture and travel starts-->
-          <div>
-            <p class="text-uppercase font-weight-bold grey-light title-gen">CULTURE & TRAVEL</p>
-          </div>             
-
-          <div class="container j-bottom d-md-flex">
-
-            <div class="col-sm-12 col-md-6 pl-0 pr-2">
-              <article class="card border-0">
-                <img class="card-img-top rounded-0" src="assets/images/img-center-2.jpg" alt="people">
-                <div class="card-body bg-light">
-                  <h5 class="card-title jbt-title pointer-cursor">As NYFW Begins, Take a Tour of the World's Other Fashion Capitals</h5>
-                  <p class="card-text jbt-text">A series of smaller fashion hubs have sprouted up around the globe—home to designers who are often more innovative, more interesting and soon-to-be more influential than long-reigning design legends.</p>
-                </div>
-                <div class="d-flex bg-light rounded-0">
-                  <p class="text-center jbt-btn">Fashion</p>
-                </div>
-              </article>
+          <div class="card border-0">
+            <!--card 3-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-3.jpeg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light"
+                  href="#"
+                  >WORLD</a
+                >
+              </div>
             </div>
-
-            <div class="col-sm-12 col-md-6 pl-2 pr-0">
-              <article class="card border-0">
-                <img class="card-img-top rounded-0" src="assets/images/img-center-5.jpeg" alt="chef">
-                <div class="card-body bg-light">
-                  <h5 class="card-title jbt-title pointer-cursor">A Chef's Success Story: From Bus Boy to Boss</h5>
-                  <p class="card-text jbt-text">Chef Abdiel Aleman opens up about his journey to become the VP of
-                    Culinary Development at Ruth's Chris Steak House</p>
-                </div>
-                <div class="d-flex bg-light rounded-0">
-                  <p class="text-center jbt-btn">Chefs</p>
-                </div>
-              </article>
-            </div>
-          </div> <!--end first line-->
-
-          <div class="container j-bottom d-md-flex">
-
-            <div class="col-sm-12 col-md-6 pl-0 pr-2">
-              <article class="card border-0">
-                <img class="card-img-top rounded-0" src="assets/images/img-center-4.jpg" alt="hotel">
-                <div class="card-body bg-light">
-                  <h5 class="card-title jbt-title pointer-cursor">The Hotel From 'The Shining' and Other Iconic, Well-Preserved Hollywood Film Settings</h5>
-                  <p class="card-text jbt-text">From Hobbiton to the gym from "Hoosiers," these film locations are more than mere roadside attractions.</p>
-                </div>
-                <div class="d-flex bg-light rounded-0">
-                  <p class="text-center jbt-btn">Film</p>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-sm-12 col-md-6 pl-2 pr-0">
-              <article class="card border-0">
-                <img class="card-img-top rounded-0" src="assets/images/img-center5.jpg" alt="card example image">
-                <div class="card-body bg-light rounded-0">
-                  <h5 class="card-title jbt-title pointer-cursor">How to Succeed at a French Farmers' Market</h5>
-                  <p class="card-text jbt-text">Follow these tips from "Cook Like a Local in France" to win at the market everytime</p>
-                </div>
-                <div class="d-flex bg-light rounded-0">
-                  <p class="text-center jbt-btn">France</p>
-                </div>
-              </article>
-            </div>
-
-          </div> <!--end second line-->
-
-
-
-        </div> <!--end culture and travel-->
-        
-
-        <div class="mt-5">
-          <p class="grey-light title-gen text-uppercase font-weight-bold border-bottom border-secondary">MORE STORIES</p>
-        </div>
-        <!--images and text-->
-        <div class="d-flex border-bottom border-secondary">
-          <figure>
-            <img src="assets/images/img-c-1.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Hong Kong Activists Are Plotting 9/11 'Terror Attack': Chinese State Media</h5>
-            <p class="grey-text title-15">The Hong Kong edition of the China Daily newspaper said it had uncovered the plot via a post on the Telegram encrypted messaging app, prompting online ridicule.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-2.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Condoleezza Rice Backs Trump in Canceling Taliban Camp David Peace Meeting</h5>
-            <p class="grey-text title-15">President Donald Trump said he had been ready to meet Taliban leaders on Sunday but canceled the visit following the death of a U.S. soldier in Afghanistan last week.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-3.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Bahamas Storm Damage 'as Though a Nuclear Bomb Was Dropped': U.S. Aid Head</h5>
-            <p class="grey-text title-15">Officials estimate that around 90 percent of the infrastructure on the Abaco Islands is damaged or destroyed.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-5.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Napping in the Day Could Protect Against Heart Attacks and Strokes</h5>
-            <p class="grey-text title-15">Researchers studied thousands of Swiss people to understand whether napping is good for heart health.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-4.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Russian Media Name Alleged U.S. Spy Who Was Evacuated From Moscow</h5>
-            <p class="grey-text title-15">Media reports say Oleg Smolenkov left Moscow with his family.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-6.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Ross Must Resign If Report He Threatened NOAA Officials Is True: Democrat</h5>
-            <p class="grey-text title-15">As President Donald Trump claimed Hurricane Dorian could hit Alabama, the National Weather Service tweeted to correct the rumors.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-7.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">This Is What Happened on the Day the Dinosaur-Killing Asteroid Hit Earth</h5>
-            <p class="grey-text title-15">A study has reconstructed the immediate aftermath of the asteroid 66 million years ago to learn more about the impact of the momentous event.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-2">
-          <figure>
-            <img src="assets/images/img-c-8.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1  text-body font-weight-bold">Baltimore Protesters Explain Why They Are Against Trump Returning to City</h5>
-            <p class="grey-text title-15">Trump will speak at the 2019 House Republican Conference Member Retreat Dinner at the Maryland city later this week.</p>
-          </div>
-        </div> <!-- end images and text-->
-
-        <div class="d-flex pt-2">
-          <figure>
-            <img src="assets/images/img-center-6.jpg" alt="men">
-          </figure>
-          <div class="pl-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Boris Johnson's Brother Quits U.K. Government
-              Amid Brexit Chaos</h5>
-            <p class="grey-text title-15">U.K. Prime Minister Boris Johnson has lost his majority in the House of
-              Commons, but is pushing ahead with no-deal Brexit plans despite widespread parliamentary opposition.</p>
-          </div>
-        </div> <!-- end images and text-->      
-
-      </div> <!-- end center content-->
-
-      <!-- right content -->
-      <div class="col-lg-4 col-md-12 col-sm-12">
-        <div>
-          <p class="grey-light title-gen text-uppercase font-weight-bold">OPINION</p>
-        </div>
-
-        <!-- face images and text-->
-        <div class="d-flex border-bottom border-secondary pb-3">
-          <figure>
-            <img src="assets/images/img-op-11.png" alt="#">
-          </figure>
-          <div class="">
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">President Trump Can't Remember a Category
-              5 Hurricane. I Nearly Died in One</p>
-            <p class="title-15 font-weight-bold grey-text">By Diandra Jones</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-4 pb-3">
-          <figure>
-            <img src="assets/images/img-op-12.png" alt="#">
-          </figure>
-          <div>
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">As Biden Disintegrates, Warren Is Walking
-              Democrats Into a Familiar Trap </p>
-            <p class="title-15 font-weight-bold grey-text">By Newt Gingrich</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-4 pb-3">
-          <figure>
-            <img src="assets/images/img-op-13.png" alt="#">
-          </figure>
-          <div>
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">Two Weeks Before the Elections, Netanyahu
-              Has No Clear Path to Victory</p>
-            <p class="title-15 font-weight-bold grey-text">By Marc Schul#</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-4 pb-3">
-          <figure>
-            <img src="assets/images/img-op-14.png" alt="#">
-          </figure>
-          <div>
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">As Biden Disintegrates, Warren Is Walking
-              Democrats Into a Familiar Trap </p>
-            <p class="title-15 font-weight-bold grey-text">By Anne Peled</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <div class="d-flex border-bottom border-secondary pt-4 pb-3">
-          <figure>
-            <img src="assets/images/img-op-15.png" alt="#">
-          </figure>
-          <div>
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">What I Learned From Surviving the Cancer
-              I Treat as a Surgeon</p>
-            <p class="title-15 font-weight-bold grey-text">By Michael Shank</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <div class="d-flex pt-4 pb-3">
-          <figure>
-            <img src="assets/images/img-op-16.png" alt="#">
-          </figure>
-          <div>
-            <p class="text-body font-weight-bold title-15 line-h-18 hover-red">What Do Republicans Offer Black People?
-              School Choice for Black Children</p>
-            <p class="title-15 font-weight-bold grey-text">By Charlie Kirk</p>
-          </div>
-        </div> <!-- end face images and text-->
-
-        <!--latest news-->
-        <div class="mt-5">
-          <p class="grey-light title-gen text-uppercase font-weight-bold">LATEST NEWS</p>
-        </div>
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-1.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">T. Rex Had Weird Holes in
-              Its Skull That Acted As an 'Air Conditioner'</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-2.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-3.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-4.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-5.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex border-bottom border-secondary mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-6.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="d-flex mt-3">
-          <figure>
-            <img class="img-right-1" src="assets/images/img-right-7.jpg" alt="#">
-          </figure>
-          <div>
-            <h5 class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2">Boris Johnson's Brother
-              Quits U.K. Government Amid Brexit Chaos</h5>
-          </div>
-        </div> <!-- end image and title-->
-
-        <div class="mt-5 position-relative text-left d-flex flex-column justify-content-end">
-          <!--sponsored add-->
-          <figure class="d-flex">
-            <img class="justify-content-center"src="assets/images/img-right-8.png" alt="#">
-          </figure>
-          <p class="text-primary position-absolute title-gen text-uppercase font-weight-bold  px-1 bg-grey-light">SPONSORED INSIGHT</p>
-        </div>
-
-        <div class="card mt-5 mb-5">
-          <!--card with text-->
-          <div class="card-body">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Ragic is very much different than any other
-              database builder or form builder products on the market. It allows you to build much more complex,
-              real-world business applications.</h5>
-            <p class="grey-text title-15">Ragic is on a mission to provide a tool to make every employee a data expert,
-              no matter if they know how to program or not.</p>
-          </div>
-        </div>
-
-        <div class="card bg-light mt-5 mb-5">
-          <!--cart with button sign in-->
-          <div class="card-body">
-            <div class="d-flex mb-2">
-              <img class="favi-img" src="assets/images/favicon.png">
-              <p class="text-uppercase ml-2 font-weight-bold">Sign up for our Newsletter</p>
-            </div>
-            <button type="button" class="btn btn-secondary text-uppercase font-weight-bold mb-3">Sign Up > </button>
-            <br>
-            <a class="card-text font-weight-bold pointer-cursor ">Update your preferences »</a>
-          </div>
-        </div>
-
-        <div class="card mt-5">
-          <!--card -->
-          <div class="position-relative text-left d-flex flex-column justify-content-end">
-            <img class="card-img-top" src="assets/images/img-right-9.jpg" alt="magazine">
-            <div class="position-absolute">
-              <a class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light" href="#">SPECIAL EDITION</a>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Brazil's Tourism Ambassador Calls Amazon Fires 'False,'
+                Threatens Macron
+              </h5>
+              <p class="card-text grey-text">
+                Renzo Gracie also attacked Macron's wife, Brigitte, by saying,
+                "the fact that he is sleeping with the dragon does not make him
+                a fire expert."
+              </p>
             </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title title-gen title-gen-1 text-body font-weight-bold">Return to 'Downton Abbey'</h5>
-            <p class="card-text grey-text">Celebrate the return of Downton Abbey, as the Crawley family makes their
-              debut on the big screen this fall. Newsweek’s Special Edition collects all the drama, tragedy and biting
-              quips from the past six seasons of the Emmy-winning series and takes you behind the scenes of the upcoming
-              Downton Abbey film.</p>
+
+          <div class="card border-0">
+            <!--card 4-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-4.png"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light"
+                  href="#"
+                  >ANALYSIS</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                The Newsweek Momentum Awards
+              </h5>
+              <p class="card-text grey-text">
+                The Newsweek Momentum Awards will recognize five individuals
+                around the globe, as well as one city, which will be chosen as
+                the "smartest city in the world."
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!--card 5-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-5.jpeg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light"
+                  href="#"
+                  >SPONSORED INSIGHT</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Why You Should Be An Engineer & Why ABET Is Important to that
+                Path.
+              </h5>
+              <p class="card-text grey-text">
+                Do you dream of changing the world? Do you want to make a
+                practical difference in people’s lives? Engineers do both these
+                things. Find out how to join them.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!--card 6-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-6.jpg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light"
+                  href="#"
+                  >SPONSORED INSIGHT</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Infertility - A look at the leading clinics in the field
+              </h5>
+              <p class="card-text grey-text">
+                There can be family related, culturally linked, and even
+                political reasons why prospective parents face significant
+                challenges seeking conception treatment. Who can they turn to?
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!--card 7-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top rounded-0"
+                src="assets/images/img-ft-7.png"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light"
+                  href="#"
+                  >SURVEY</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Best Nursing Home
+              </h5>
+              <p class="card-text grey-text">
+                Newsweek is partnering with the respected global data research
+                firm Statista Inc. to establish a ranking of Best Nursing Homes.
+                The final rankings will be published in Newsweek magazine and on
+                Newsweek.com
+              </p>
+            </div>
           </div>
         </div>
+        <!-- end left content -->
 
-      </div><!-- end right content -->
+        <!-- center content-->
+        <div class="col-lg-5 col-md-6 col-sm-12">
+          <div>
+            <p class="grey-light title-gen text-uppercase font-weight-bold">
+              TOP STORY
+            </p>
+          </div>
 
-    </div> <!-- end div row-->
+          <div class="card">
+            <!--card-->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top"
+                src="assets/images/img-center-1.jpg"
+                alt="boy"
+              />
+              <div class="position-absolute">
+                <a
+                  class="title-gen text-uppercase font-weight-bold red-color px-1 bg-grey-light"
+                  href="#"
+                  >NEWS</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                How Hong Kong Protesters' 'Tenacious' Tactics Are Confounding
+                Police and China
+              </h5>
+              <p class="card-text grey-text">
+                The leaderless crowds direct each other via encrypted messaging
+                apps, creating a fluid, adaptable and stubborn mass street
+                protests movement.
+              </p>
+            </div>
+          </div>
 
-  </div> <!-- end 1 container-->
+          <div class="mb-2 mt-5 bg-light pt-2">
+            <!-- culture and travel starts-->
+            <div>
+              <p class="text-uppercase font-weight-bold grey-light title-gen">
+                CULTURE & TRAVEL
+              </p>
+            </div>
 
+            <div class="container j-bottom d-md-flex">
+              <div class="col-sm-12 col-md-6 pl-0 pr-2">
+                <article class="card border-0">
+                  <img
+                    class="card-img-top rounded-0"
+                    src="assets/images/img-center-2.jpg"
+                    alt="people"
+                  />
+                  <div class="card-body bg-light">
+                    <h5 class="card-title jbt-title pointer-cursor">
+                      As NYFW Begins, Take a Tour of the World's Other Fashion
+                      Capitals
+                    </h5>
+                    <p class="card-text jbt-text">
+                      A series of smaller fashion hubs have sprouted up around
+                      the globe—home to designers who are often more innovative,
+                      more interesting and soon-to-be more influential than
+                      long-reigning design legends.
+                    </p>
+                  </div>
+                  <div class="d-flex bg-light rounded-0">
+                    <p class="text-center jbt-btn">Fashion</p>
+                  </div>
+                </article>
+              </div>
 
-  <!-- 2 container -->
-  <!-- in the magazine content -->
-  <div class="container-fluid pb-2 mt-2">
+              <div class="col-sm-12 col-md-6 pl-2 pr-0">
+                <article class="card border-0">
+                  <img
+                    class="card-img-top rounded-0"
+                    src="assets/images/img-center-5.jpeg"
+                    alt="chef"
+                  />
+                  <div class="card-body bg-light">
+                    <h5 class="card-title jbt-title pointer-cursor">
+                      A Chef's Success Story: From Bus Boy to Boss
+                    </h5>
+                    <p class="card-text jbt-text">
+                      Chef Abdiel Aleman opens up about his journey to become
+                      the VP of Culinary Development at Ruth's Chris Steak House
+                    </p>
+                  </div>
+                  <div class="d-flex bg-light rounded-0">
+                    <p class="text-center jbt-btn">Chefs</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!--end first line-->
 
-    <div class="row pb-2">
-      <!--first row-->
-      <div class="col-lg-3 col-md-3 d-none d-md-block">
+            <div class="container j-bottom d-md-flex">
+              <div class="col-sm-12 col-md-6 pl-0 pr-2">
+                <article class="card border-0">
+                  <img
+                    class="card-img-top rounded-0"
+                    src="assets/images/img-center-4.jpg"
+                    alt="hotel"
+                  />
+                  <div class="card-body bg-light">
+                    <h5 class="card-title jbt-title pointer-cursor">
+                      The Hotel From 'The Shining' and Other Iconic,
+                      Well-Preserved Hollywood Film Settings
+                    </h5>
+                    <p class="card-text jbt-text">
+                      From Hobbiton to the gym from "Hoosiers," these film
+                      locations are more than mere roadside attractions.
+                    </p>
+                  </div>
+                  <div class="d-flex bg-light rounded-0">
+                    <p class="text-center jbt-btn">Film</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-sm-12 col-md-6 pl-2 pr-0">
+                <article class="card border-0">
+                  <img
+                    class="card-img-top rounded-0"
+                    src="assets/images/img-center5.jpg"
+                    alt="card example image"
+                  />
+                  <div class="card-body bg-light rounded-0">
+                    <h5 class="card-title jbt-title pointer-cursor">
+                      How to Succeed at a French Farmers' Market
+                    </h5>
+                    <p class="card-text jbt-text">
+                      Follow these tips from "Cook Like a Local in France" to
+                      win at the market everytime
+                    </p>
+                  </div>
+                  <div class="d-flex bg-light rounded-0">
+                    <p class="text-center jbt-btn">France</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!--end second line-->
+          </div>
+          <!--end culture and travel-->
+
+          <div class="mt-5">
+            <p
+              class="grey-light title-gen text-uppercase font-weight-bold border-bottom border-secondary"
+            >
+              MORE STORIES
+            </p>
+          </div>
+          <!--images and text-->
+          <div class="d-flex border-bottom border-secondary">
+            <figure>
+              <img src="assets/images/img-c-1.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Hong Kong Activists Are Plotting 9/11 'Terror Attack': Chinese
+                State Media
+              </h5>
+              <p class="grey-text title-15">
+                The Hong Kong edition of the China Daily newspaper said it had
+                uncovered the plot via a post on the Telegram encrypted
+                messaging app, prompting online ridicule.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-2.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Condoleezza Rice Backs Trump in Canceling Taliban Camp David
+                Peace Meeting
+              </h5>
+              <p class="grey-text title-15">
+                President Donald Trump said he had been ready to meet Taliban
+                leaders on Sunday but canceled the visit following the death of
+                a U.S. soldier in Afghanistan last week.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-3.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Bahamas Storm Damage 'as Though a Nuclear Bomb Was Dropped':
+                U.S. Aid Head
+              </h5>
+              <p class="grey-text title-15">
+                Officials estimate that around 90 percent of the infrastructure
+                on the Abaco Islands is damaged or destroyed.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-5.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Napping in the Day Could Protect Against Heart Attacks and
+                Strokes
+              </h5>
+              <p class="grey-text title-15">
+                Researchers studied thousands of Swiss people to understand
+                whether napping is good for heart health.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-4.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Russian Media Name Alleged U.S. Spy Who Was Evacuated From
+                Moscow
+              </h5>
+              <p class="grey-text title-15">
+                Media reports say Oleg Smolenkov left Moscow with his family.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-6.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Ross Must Resign If Report He Threatened NOAA Officials Is True:
+                Democrat
+              </h5>
+              <p class="grey-text title-15">
+                As President Donald Trump claimed Hurricane Dorian could hit
+                Alabama, the National Weather Service tweeted to correct the
+                rumors.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-7.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                This Is What Happened on the Day the Dinosaur-Killing Asteroid
+                Hit Earth
+              </h5>
+              <p class="grey-text title-15">
+                A study has reconstructed the immediate aftermath of the
+                asteroid 66 million years ago to learn more about the impact of
+                the momentous event.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-2">
+            <figure>
+              <img src="assets/images/img-c-8.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1  text-body font-weight-bold">
+                Baltimore Protesters Explain Why They Are Against Trump
+                Returning to City
+              </h5>
+              <p class="grey-text title-15">
+                Trump will speak at the 2019 House Republican Conference Member
+                Retreat Dinner at the Maryland city later this week.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+
+          <div class="d-flex pt-2">
+            <figure>
+              <img src="assets/images/img-center-6.jpg" alt="men" />
+            </figure>
+            <div class="pl-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+              <p class="grey-text title-15">
+                U.K. Prime Minister Boris Johnson has lost his majority in the
+                House of Commons, but is pushing ahead with no-deal Brexit plans
+                despite widespread parliamentary opposition.
+              </p>
+            </div>
+          </div>
+          <!-- end images and text-->
+        </div>
+        <!-- end center content-->
+
+        <!-- right content -->
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div>
+            <p class="grey-light title-gen text-uppercase font-weight-bold">
+              OPINION
+            </p>
+          </div>
+
+          <!-- face images and text-->
+          <div class="d-flex border-bottom border-secondary pb-3">
+            <figure>
+              <img src="assets/images/img-op-11.png" alt="#" />
+            </figure>
+            <div class="">
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                President Trump Can't Remember a Category 5 Hurricane. I Nearly
+                Died in One
+              </p>
+              <p class="title-15 font-weight-bold grey-text">
+                By Diandra Jones
+              </p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-4 pb-3">
+            <figure>
+              <img src="assets/images/img-op-12.png" alt="#" />
+            </figure>
+            <div>
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                As Biden Disintegrates, Warren Is Walking Democrats Into a
+                Familiar Trap
+              </p>
+              <p class="title-15 font-weight-bold grey-text">
+                By Newt Gingrich
+              </p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-4 pb-3">
+            <figure>
+              <img src="assets/images/img-op-13.png" alt="#" />
+            </figure>
+            <div>
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                Two Weeks Before the Elections, Netanyahu Has No Clear Path to
+                Victory
+              </p>
+              <p class="title-15 font-weight-bold grey-text">By Marc Schul#</p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-4 pb-3">
+            <figure>
+              <img src="assets/images/img-op-14.png" alt="#" />
+            </figure>
+            <div>
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                As Biden Disintegrates, Warren Is Walking Democrats Into a
+                Familiar Trap
+              </p>
+              <p class="title-15 font-weight-bold grey-text">By Anne Peled</p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <div class="d-flex border-bottom border-secondary pt-4 pb-3">
+            <figure>
+              <img src="assets/images/img-op-15.png" alt="#" />
+            </figure>
+            <div>
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                What I Learned From Surviving the Cancer I Treat as a Surgeon
+              </p>
+              <p class="title-15 font-weight-bold grey-text">
+                By Michael Shank
+              </p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <div class="d-flex pt-4 pb-3">
+            <figure>
+              <img src="assets/images/img-op-16.png" alt="#" />
+            </figure>
+            <div>
+              <p
+                class="text-body font-weight-bold title-15 line-h-18 hover-red"
+              >
+                What Do Republicans Offer Black People? School Choice for Black
+                Children
+              </p>
+              <p class="title-15 font-weight-bold grey-text">By Charlie Kirk</p>
+            </div>
+          </div>
+          <!-- end face images and text-->
+
+          <!--latest news-->
+          <div class="mt-5">
+            <p class="grey-light title-gen text-uppercase font-weight-bold">
+              LATEST NEWS
+            </p>
+          </div>
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-1.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                T. Rex Had Weird Holes in Its Skull That Acted As an 'Air
+                Conditioner'
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-2.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-3.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-4.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-5.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex border-bottom border-secondary mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-6.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div class="d-flex mt-3">
+            <figure>
+              <img
+                class="img-right-1"
+                src="assets/images/img-right-7.jpg"
+                alt="#"
+              />
+            </figure>
+            <div>
+              <h5
+                class="font-weight-bold title-gen hover-red text-body title-15 line-h-18 ml-2"
+              >
+                Boris Johnson's Brother Quits U.K. Government Amid Brexit Chaos
+              </h5>
+            </div>
+          </div>
+          <!-- end image and title-->
+
+          <div
+            class="mt-5 position-relative text-left d-flex flex-column justify-content-end"
+          >
+            <!--sponsored add-->
+            <figure class="d-flex">
+              <img
+                class="justify-content-center"
+                src="assets/images/img-right-8.png"
+                alt="#"
+              />
+            </figure>
+            <p
+              class="text-primary position-absolute title-gen text-uppercase font-weight-bold  px-1 bg-grey-light"
+            >
+              SPONSORED INSIGHT
+            </p>
+          </div>
+
+          <div class="card mt-5 mb-5">
+            <!--card with text-->
+            <div class="card-body">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Ragic is very much different than any other database builder or
+                form builder products on the market. It allows you to build much
+                more complex, real-world business applications.
+              </h5>
+              <p class="grey-text title-15">
+                Ragic is on a mission to provide a tool to make every employee a
+                data expert, no matter if they know how to program or not.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-light mt-5 mb-5">
+            <!--cart with button sign in-->
+            <div class="card-body">
+              <div class="d-flex mb-2">
+                <img class="favi-img" src="assets/images/favicon.png" alt="#" />
+                <p class="text-uppercase ml-2 font-weight-bold">
+                  Sign up for our Newsletter
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary text-uppercase font-weight-bold mb-3"
+              >
+                Sign Up >
+              </button>
+              <br />
+              <a class="card-text font-weight-bold pointer-cursor "
+                >Update your preferences »</a
+              >
+            </div>
+          </div>
+
+          <div class="card mt-5">
+            <!--card -->
+            <div
+              class="position-relative text-left d-flex flex-column justify-content-end"
+            >
+              <img
+                class="card-img-top"
+                src="assets/images/img-right-9.jpg"
+                alt="magazine"
+              />
+              <div class="position-absolute">
+                <a
+                  class="text-primary title-gen text-uppercase font-weight-bold px-1 bg-grey-light"
+                  href="#"
+                  >SPECIAL EDITION</a
+                >
+              </div>
+            </div>
+            <div class="card-body">
+              <h5
+                class="card-title title-gen title-gen-1 text-body font-weight-bold"
+              >
+                Return to 'Downton Abbey'
+              </h5>
+              <p class="card-text grey-text">
+                Celebrate the return of Downton Abbey, as the Crawley family
+                makes their debut on the big screen this fall. Newsweek’s
+                Special Edition collects all the drama, tragedy and biting quips
+                from the past six seasons of the Emmy-winning series and takes
+                you behind the scenes of the upcoming Downton Abbey film.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- end right content -->
       </div>
-
-      <div class="col-lg-3 col-md-3 d-none d-md-block border-bottom border-light"> 
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12 d-flex justify-content-center border-bottom border-light">
-        <img class="favi-img" src="assets/images/favicon.png">
-        <h5 class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2">IN THE MAGAZINE</h5>
-      </div>
-
-      <div class="col-lg-3 col-md-3 d-none d-md-block border-bottom border-light py-2">
-      </div>
+      <!-- end div row-->
     </div>
+    <!-- end 1 container-->
 
-    <div class="w-100"></div>
+    <!-- 2 container -->
+    <!-- in the magazine content -->
+    <div class="container-fluid pb-2 mt-2">
+      <div class="row pb-2">
+        <!--first row-->
+        <div class="col-lg-3 col-md-3 d-none d-md-block"></div>
 
-    <div class="row">
-    <!-- second row-->
+        <div
+          class="col-lg-3 col-md-3 d-none d-md-block border-bottom border-light"
+        ></div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-cont2-1.jpg" alt="herb">
-          <div class="d-flex pb-0 pt-2">
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">September 20 issue</p>
-          </div>
-          <div class="mt-0 pt-0 d-flex justify-content-center px-2">
-            <p class="title-gen text-body font-weight-bold text-uppercase hover-grey c-pointer">See all features > </p>
-          </div>
+        <div
+          class="col-lg-3 col-md-3 col-sm-12 d-flex justify-content-center border-bottom border-light"
+        >
+          <img class="favi-img" src="assets/images/favicon.png" alt="favicon" />
+          <h5
+            class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2"
+          >
+            IN THE MAGAZINE
+          </h5>
         </div>
+
+        <div
+          class="col-lg-3 col-md-3 d-none d-md-block border-bottom border-light py-2"
+        ></div>
       </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-2.jpg" alt="brain">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">cover</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">Tech & Science</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">Scientists' Understanding of Anxiety is Radically Evolving</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/im-mg-3.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">features</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">Tech & Science</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">Amazon Rainforest Fires: What the Long-term Damage Could Be</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-4.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">downloads</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">world</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">Benjamin Netanyahu is Playing a Dangerous Game With Iranian Allies</p>
-          </div>
-        </div>
-      </div>
-
-
 
       <div class="w-100"></div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-5.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">downtime</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">culture</p>
+      <div class="row">
+        <!-- second row-->
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-cont2-1.jpg"
+              alt="herb"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                September 20 issue
+              </p>
+            </div>
+            <div class="mt-0 pt-0 d-flex justify-content-center px-2">
+              <p
+                class="title-gen text-body font-weight-bold text-uppercase hover-grey c-pointer"
+              >
+                See all features >
+              </p>
+            </div>
           </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">The Real Cost of Your Blue Jeans</p>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-2.jpg"
+              alt="brain"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                cover
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                Tech & Science
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                Scientists' Understanding of Anxiety is Radically Evolving
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/im-mg-3.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                features
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                Tech & Science
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                Amazon Rainforest Fires: What the Long-term Damage Could Be
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-4.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                downloads
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                world
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                Benjamin Netanyahu is Playing a Dangerous Game With Iranian
+                Allies
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-5.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                downtime
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                culture
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                The Real Cost of Your Blue Jeans
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-6.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                downtime
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                culture
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                Author Dana Thomas on the price of fast fashion
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-7.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                downtime
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                culture
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                André S talks diversity...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-mg-8.jpg"
+              alt="#"
+            />
+            <div class="d-flex pb-0 pt-2">
+              <p
+                class="text-uppercase square-red text-white font-weight-bold px-1"
+              >
+                features
+              </p>
+              <p
+                class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+              >
+                world
+              </p>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="title-gen title-gen-1 text-body font-weight-bold">
+                The Amazon Rainforest Fires Are Pumping CO2 Into the Atmosphere
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-6.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">downtime</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">culture</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">Author Dana Thomas on the price of fast fashion</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-7.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">downtime</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">culture</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">Hadestown's André De Shields Talks Diversity on Broadway</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-mg-8.jpg" alt="#">
-          <div class="d-flex pb-0 pt-2">
-            <p class="text-uppercase square-red text-white font-weight-bold px-1">features</p>
-            <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">world</p>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="title-gen title-gen-1 text-body font-weight-bold">The Amazon Rainforest Fires Are Pumping CO2 Into the Atmosphere</p>
-          </div>
-        </div>
-      </div>
-
+      <!--end row-->
     </div>
-    <!--end row-->
+    <!--end 2 container-->
 
-  </div> <!--end 2 container-->
-  
-
-  <!-- 3 container -->
-  <!-- editor's pick content-->
-  <div class="container-fluid mt-5">
-
-    <div class="row">
-      <!--first row-->
-      <div class="col d-flex justify-content-center py-2 border-bottom border-light">
-        <img class="favi-img" src="assets/images/favicon.png">
-        <h5 class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2">EDITOR'S PICK</h5>
-      </div>
-    </div>
-
-    <div class="w-100"></div>
-
-    <div class="row pt-2">
-      <!-- second row-->
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-1.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">politics</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Ross Must Resign If Report He Threatened NOAA Officials Is True: Democrat</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">As President Donald Trump claimed Hurricane Dorian could hit Alabama, the National Weather Service tweeted to correct the rumors.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-2.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">world</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Russian Media Name Alleged U.S. Spy Who Was Evacuated From Moscow</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">Media reports say Oleg Smolenkov left Moscow with his family and may have moved to Washington DC.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-3.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">U.S.</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Texas Coach Named in College Admission Scandal Did the 'Unthinkable'</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">A legal review found the college admission scandal was an isolated case and made recommendations to prevent it from happening in the future.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12"> 
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-4.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">U.S.</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Marco Rubio: 'Unlawful Immigration' From Bahamas Is Not an Issue</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">Florida Republican Senator Marco Rubio's comments came as President Donald Trump de#ded all Bahamians fleeing the devastation of Hurricane Dorian have "totally proper documentation" before trying to come to the U.S.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-100"></div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-5.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">U.S.</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Baltimore Protesters Explain Why They Are Against Trump Returning to City</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">Trump will speak at the 2019 House Republican Conference Member Retreat Dinner at the Maryland city later this week</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-6.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">tech & Science</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Honey Bees Temporarily Blind Queens With Semen so They Can't Mate Again</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">Scientists tracked queens during a period in their lives when they collect a lifetime's worth of sperm from males.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-7.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">U.S.</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">GOP Senator Calls for Ban of 'Liberal Breeding Ground' of Higher Education</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">State Senator Kerry Roberts made the suggestion to "save America" while discussing a recent abortion ruling.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/img-ep-8.jpg" alt="#">
-          <p class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer">news</p>
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Russian Sailors Rescue North Korean # Lost at Sea for 10 Hours</h5>
-          </div>
-          <div class="mt-0 pt-0">
-            <p class="card-text grey-text">The # managed to keep himself afloat using two bits of plastic foam, surviving until the Russian vessel picked him up near the coast.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--end row-->
-
-  </div> <!--end 3 container-->
-
-  
-  <!-- 4 container -->
-  <!-- in the FEATURED SLIDESHOWS content -->
-  <div class="container-fluid pb-1 mt-5 mb-1">
-
-    <div class="row">
-      <!--first row-->
-      <div class="col mb-1">
-        <div class="col d-flex justify-content-center py-2 border-bottom border-light">
-          <img class="favi-img" src="assets/images/favicon.png">
-          <h5 class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2">FEATURED SLIDESHOWS
+    <!-- 3 container -->
+    <!-- editor's pick content-->
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <!--first row-->
+        <div
+          class="col d-flex justify-content-center py-2 border-bottom border-light"
+        >
+          <img class="favi-img" src="assets/images/favicon.png" alt="#" />
+          <h5
+            class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2"
+          >
+            EDITOR'S PICK
           </h5>
         </div>
       </div>
-    </div>
-
-    <div class="w-100"></div>
-
-    <div class="row">
-      <!-- second row-->
-
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-1.jpg" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-2.jpg" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-3.jpg" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
-          </div>
-        </div>
-      </div>
-
 
       <div class="w-100"></div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-4.jpg" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
+      <div class="row pt-2">
+        <!-- second row-->
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-1.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              politics
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Ross Must Resign If Report He Threatened NOAA Officials Is True:
+                Democrat
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                As President Donald Trump claimed Hurricane Dorian could hit
+                Alabama, the National Weather Service tweeted to correct the
+                rumors.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-2.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              world
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Russian Media Name Alleged U.S. Spy Who Was Evacuated From
+                Moscow
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                Media reports say Oleg Smolenkov left Moscow with his family and
+                may have moved to Washington DC.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-3.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              U.S.
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Texas Coach Named in College Admission Scandal Did the
+                'Unthinkable'
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                A legal review found the college admission scandal was an
+                isolated case and made recommendations to prevent it from
+                happening in the future.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-4.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              U.S.
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Marco Rubio: 'Unlawful Immigration' From Bahamas Is Not an Issue
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                Florida Republican Senator Marco Rubio's comments came as
+                President Donald Trump de#ded all Bahamians fleeing the
+                devastation of Hurricane Dorian have "totally proper
+                documentation" before trying to come to the U.S.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-5.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              U.S.
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Baltimore Protesters Explain Why They Are Against Trump
+                Returning to City
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                Trump will speak at the 2019 House Republican Conference Member
+                Retreat Dinner at the Maryland city later this week
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-6.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              tech & Science
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Honey Bees Temporarily Blind Queens With Semen so They Can't
+                Mate Again
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                Scientists tracked queens during a period in their lives when
+                they collect a lifetime's worth of sperm from males.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-7.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              U.S.
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                GOP Senator Calls for Ban of 'Liberal Breeding Ground' of Higher
+                Education
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                State Senator Kerry Roberts made the suggestion to "save
+                America" while discussing a recent abortion ruling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/img-ep-8.jpg"
+              alt="#"
+            />
+            <p
+              class="card-text text-uppercase title-gen red-color font-weight-bold px-2 c-pointer"
+            >
+              news
+            </p>
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Russian Sailors Rescue North Korean # Lost at Sea for 10 Hours
+              </h5>
+            </div>
+            <div class="mt-0 pt-0">
+              <p class="card-text grey-text">
+                The # managed to keep himself afloat using two bits of plastic
+                foam, surviving until the Russian vessel picked him up near the
+                coast.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end row-->
+    </div>
+    <!--end 3 container-->
+
+    <!-- 4 container -->
+    <!-- in the FEATURED SLIDESHOWS content -->
+    <div class="container-fluid pb-1 mt-5 mb-1">
+      <div class="row">
+        <!--first row-->
+        <div class="col mb-1">
+          <div
+            class="col d-flex justify-content-center py-2 border-bottom border-light"
+          >
+            <img class="favi-img" src="assets/images/favicon.png" alt="#" />
+            <h5
+              class="title-gen text-body font-weight-bold text-uppercase pl-2 pt-2"
+            >
+              FEATURED SLIDESHOWS
+            </h5>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-5.jpg" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
+      <div class="w-100"></div>
+
+      <div class="row">
+        <!-- second row-->
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-1.jpg"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-2.jpg"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-3.jpg"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-4.jpg"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-5.jpg"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end"
+        >
+          <div class="card border-0">
+            <img
+              class="card-img-top rounded-0"
+              src="assets/images/sl-6.png"
+              alt="#"
+            />
+            <img
+              class="slide-img position-absolute"
+              src="assets/images/slide-img.png"
+              alt="#"
+            />
+            <div class="card-body d-flex pb-0 pt-2">
+              <h5 class="title-gen title-gen-1 text-body font-weight-bold">
+                Content title
+              </h5>
+            </div>
           </div>
         </div>
       </div>
+      <!--end row-->
+    </div>
+    <!--end 4 container-->
 
-      <div class="col-lg-4 col-md-4 col-sm-12 my-2 position-relative text-left d-flex flex-column justify-content-end">
-        <div class="card border-0">
-          <img class="card-img-top rounded-0" src="assets/images/sl-6.png" alt="#">
-          <img class="slide-img position-absolute" src="assets/images/slide-img.png">
-          <div class="card-body d-flex pb-0 pt-2">
-            <h5 class="title-gen title-gen-1 text-body font-weight-bold">Content title</h5>
+    <!-- 5 container -->
+    <!-- US content -->
+    <div
+      class="container-fluid border-top border-bottom border-light pb-2 mt-5"
+    >
+      <div class="row pt-3">
+        <div class="">
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            U.S.
+          </h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/us1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            'This Is A New Low': Watchdog Calls to Investigate Trump Over G7
+            Location
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/us2.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Worshipers in Awe of 'Crying' Virgin Mary Painting in Chicago Church
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/us3.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Newt Gingrich Blasts 'Absurdity' of Democrats' Partisan
+              Impeachment Inquiry
+            </h5>
+          </div>
+
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/us4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Marianne Williamson Says 'System Is Even More Corrupt Than I Knew'
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/us5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Texas Father Averts Potential Mass Shooting After Reporting Son to
+              Police
+            </h5>
           </div>
         </div>
       </div>
-
     </div>
-    <!--end row-->
+    <!--end 5 container-->
 
-  </div> <!--end 4 container-->
-
-
-  <!-- 5 container -->
-  <!-- US content -->
-  <div class="container-fluid border-top border-bottom border-light pb-2 mt-5">
-    <div class="row pt-3">
-      <div class="">
-        <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">U.S.</h5>
-      </div>
-    </div>
-
-    <div class="row">       
-
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/us1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">'This Is A New Low': Watchdog Calls to Investigate Trump Over G7 Location</h5>
-      </div>
-
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/us2.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Worshipers in Awe of 'Crying' Virgin Mary Painting in Chicago Church</h5>
-      </div>
-
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/us3.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Newt Gingrich Blasts 'Absurdity' of Democrats' Partisan Impeachment Inquiry</h5>
-        </div>
-
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/us4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Marianne Williamson Says 'System Is Even More Corrupt Than I Knew'</h5>
-        </div>
-
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/us5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Texas Father Averts Potential Mass Shooting After Reporting Son to Police</h5>
-        </div>
-      </div>
-
-    </div>
-
-  </div> <!--end 5 container-->
-
-
-  <!-- 6 container -->
-  <!-- world content -->
-  <div class="container-fluid border-top border-bottom border-light pb-3">
-    <div class="row pt-3">
-      <div class="">
-        <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">World</h5>
-      </div>
-    </div>
-  
-    <div class="row">       
-  
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/w1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Ilhan Omar Meets New Zealand Politician Who Was Also Refugee</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/w2.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Gay Groom's Mother Told He 'Will Not Be Going to Heaven' in Anonymous Lette</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/w3.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Acupuncturist Inserts Needles Too Deeply, Punctures Patient's Lungs</h5>
-        </div>
-  
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/w4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">#TalibanTraitorTrump Trends After Trump Cancels Taliban Meeting</h5>
-        </div>
-  
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/w5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Outrage After German Town Elects Far-Right Mayor</h5>
-        </div>
-      </div>  
-    </div>
-  
-  </div> <!--end 6 container-->
-
-
-  <!-- 7 container -->
-  <!-- Business content -->
-  <div class="container-fluid border-top border-bottom border-light pb-3">
-    <div class="row pt-3">
+    <!-- 6 container -->
+    <!-- world content -->
+    <div class="container-fluid border-top border-bottom border-light pb-3">
+      <div class="row pt-3">
         <div class="">
-          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">Business</h5>
-        </div>
-    </div>
-  
-    <div class="row">       
-  
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/b1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Texas Sees Democratic Party Rise as White Liberals Arrive For Great Economy</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/b2.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">JPMorgan Launches 'Volfefe Index' to Track how Donald Trump's Tweets Impac</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/b3.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">KFC China Now Has Durian Chicken Nuggets</h5>
-        </div>
-  
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/b4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">British Hotel Charges Man $68,000 For a Beer</h5>
-        </div>
-  
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/b5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Florida Man Buys 100 Generators to Donate to Hurricane-Ravaged Bahamas</h5>
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            World
+          </h5>
         </div>
       </div>
-  
-    </div>
-  
-  </div> <!--end 7 container-->
 
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/w1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Ilhan Omar Meets New Zealand Politician Who Was Also Refugee
+          </h5>
+        </div>
 
-  <!-- 8 container -->
-  <!-- Tech & Science content -->
-  <div class="container-fluid border-bottom border-light pb-3">
-    <div class="row pt-3">
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/w2.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Gay Groom's Mother Told He 'Will Not Be Going to Heaven' in
+            Anonymous Lette
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/w3.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Acupuncturist Inserts Needles Too Deeply, Punctures Patient's
+              Lungs
+            </h5>
+          </div>
+
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/w4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              #TalibanTraitorTrump Trends After Trump Cancels Taliban Meeting
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/w5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Outrage After German Town Elects Far-Right Mayor
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end 6 container-->
+
+    <!-- 7 container -->
+    <!-- Business content -->
+    <div class="container-fluid border-top border-bottom border-light pb-3">
+      <div class="row pt-3">
         <div class="">
-          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">Tech & Science</h5>
-        </div>
-    </div>
-  
-    <div class="row">       
-  
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/img-am.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Amazon Rainforest Fires Are Only Going to Get Worse | Opinion</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/ts1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Apple Event 2019 Live Blog: How to Watch and What to Expect</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/ts3.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Seventh Mass Extinction? Deadly Event Occurred 260 Million Years Ago</h5>
-        </div>
-  
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/ts4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">This Is What Happened on the Day the Dinosaur-Killing Asteroid Hit Earth</h5>
-        </div>
-  
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/ts5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Mystery Green Flash at Center of Distant Galaxy Vanished After Two Weeks</h5>
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            Business
+          </h5>
         </div>
       </div>
-  
-    </div>
-  
-  </div> <!--end 8 container-->
 
-  
-<!-- 9 container -->
-<!-- Culture content -->
-  <div class="container-fluid border-top border-bottom border-light pb-3">
-    <div class="row pt-3">
-      <div class="">
-        <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">Culture</h5>
-      </div>
-    </div>
-    
-    <div class="row">       
-    
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/img-sp.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Newspaper Puts Marvel Comics Gay Kiss on Front Page to Protest Censorship</h5>
-      </div>
-    
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/c1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Where Is Hannah Brown Now? Bachelorette Open to Love After Breakup</h5>
-      </div>
-    
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/c3.png" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">The Weeknd Is Now The Weekday</h5>
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/b1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Texas Sees Democratic Party Rise as White Liberals Arrive For Great
+            Economy
+          </h5>
         </div>
-    
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/c4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">'Downton Abbey' Movie Gets Positive First Reviews</h5>
-        </div>
-    
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/c5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">What Netflix's 'The Spy' Gets Wrong About Eli Cohen</h5>
-        </div>
-      </div>
-    
-    </div>
-    
-  
-  </div> <!--end 9 container-->
-    
 
-  <!-- 10 container -->
-  <!-- Sports content -->
-  <div class="container-fluid border-top border-bottom border-light pb-3">
-    <div class="row pt-3">
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/b2.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            JPMorgan Launches 'Volfefe Index' to Track how Donald Trump's Tweets
+            Impac
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/b3.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              KFC China Now Has Durian Chicken Nuggets
+            </h5>
+          </div>
+
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/b4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              British Hotel Charges Man $68,000 For a Beer
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/b5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Florida Man Buys 100 Generators to Donate to Hurricane-Ravaged
+              Bahamas
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end 7 container-->
+
+    <!-- 8 container -->
+    <!-- Tech & Science content -->
+    <div class="container-fluid border-bottom border-light pb-3">
+      <div class="row pt-3">
         <div class="">
-          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">Sports</h5>
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            Tech & Science
+          </h5>
         </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/img-am.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Amazon Rainforest Fires Are Only Going to Get Worse | Opinion
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/ts1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Apple Event 2019 Live Blog: How to Watch and What to Expect
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/ts3.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Seventh Mass Extinction? Deadly Event Occurred 260 Million Years
+              Ago
+            </h5>
+          </div>
+
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/ts4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              This Is What Happened on the Day the Dinosaur-Killing Asteroid Hit
+              Earth
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/ts5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Mystery Green Flash at Center of Distant Galaxy Vanished After Two
+              Weeks
+            </h5>
+          </div>
+        </div>
+      </div>
     </div>
-  
-    <div class="row">       
-  
-      <div class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/sp1.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Boston Police Commissioner Defends Officers After Clashes at Straight Pride</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white">
-        <img class="card-img-top rounded-0" src="assets/images/sp2.jpg" alt="#">
-        <h5 class="title-gen-1 text-body font-weight-bold">Solheim Cup 2019 Teams: Full Team USA and Team Europe Rosters</h5>
-      </div>
-  
-      <div class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white">
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0  img-right-1" src="assets/images/sp3.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">FIBA World Cup Draw: Quarterfinals Schedule, Live Stream and Latest Odds</h5>
-        </div>
-  
-        <div class="d-flex flex-row border-bottom border-secondary py-2 rounded-0">
-          <img class="card-img-top rounded-0 img-right-1 " src="assets/images/sp4.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">USMNT vs. Uruguay: Where to Watch, Live Stream, TV Channel, Odds</h5>
-        </div>
-  
-        <div class="d-flex flex-row py-2 border border-white">
-          <img class="card-img-top rounded-0 img-right-1 rounded-0" src="assets/images/sp5.jpg" alt="#">
-          <h5 class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red">Monday Night RAW Results (9/9)</h5>
+    <!--end 8 container-->
+
+    <!-- 9 container -->
+    <!-- Culture content -->
+    <div class="container-fluid border-top border-bottom border-light pb-3">
+      <div class="row pt-3">
+        <div class="">
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            Culture
+          </h5>
         </div>
       </div>
-  
+
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/img-sp.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Newspaper Puts Marvel Comics Gay Kiss on Front Page to Protest
+            Censorship
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/c1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Where Is Hannah Brown Now? Bachelorette Open to Love After Breakup
+          </h5>
+        </div>
+
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/c3.png"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              The Weeknd Is Now The Weekday
+            </h5>
+          </div>
+
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/c4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              'Downton Abbey' Movie Gets Positive First Reviews
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/c5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              What Netflix's 'The Spy' Gets Wrong About Eli Cohen
+            </h5>
+          </div>
+        </div>
+      </div>
     </div>
-  
-  </div> <!--end 10 container-->
+    <!--end 9 container-->
 
+    <!-- 10 container -->
+    <!-- Sports content -->
+    <div class="container-fluid border-top border-bottom border-light pb-3">
+      <div class="row pt-3">
+        <div class="">
+          <h5 class="text-uppercase font-weight-bold c-pointer red-color pl-4">
+            Sports
+          </h5>
+        </div>
+      </div>
 
-  <!--11 container-->
-  <!--subscribe newsletter-->
-  <div class="container mb-3 mt-4">
-    <div class="row">
-      <!--left content-->
-      <div class="col-lg-8 col-sm-12">
-        <div class="text-uppercase font-weight-bold red-color">Subscribe</div> <!--title-->
-        <div class="d-flex flex-row bg-light"> <!--to put content in a row-->
-          <div class="subs-left height-mg"> <!--magazines-->
-            <img class="pt-3 pl-3" src="assets/images/mg02.jpg" alt="images">
-            <img  class="mg-herb"src="assets/images/mg01.jpg" alt="images">
-          </div> <!--end magazines-->
+      <div class="row">
+        <div
+          class="card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/sp1.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Boston Police Commissioner Defends Officers After Clashes at
+            Straight Pride
+          </h5>
+        </div>
 
-          <div class="bg-light subs-right pt-5 ml-2"> <!--text and button-->
-            <h5 class="text-body font-weight-bold ml-5">In-depth Stories You Don't See Elsewhere About Topics You Want to Read!</h5>
-            <p class="grey-text ml-5">All Access + Weekly Delivery. Choose A Membership That's Perfect for You!</p>
-            <button type="button" class="btn square-red text-white font-weight-bold rounded-0 text-uppercase ml-5">Subscribe ></button>
-          </div> <!--end text and button-->
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 rounded-0 border border-white"
+        >
+          <img
+            class="card-img-top rounded-0"
+            src="assets/images/sp2.jpg"
+            alt="#"
+          />
+          <h5 class="title-gen-1 text-body font-weight-bold">
+            Solheim Cup 2019 Teams: Full Team USA and Team Europe Rosters
+          </h5>
+        </div>
 
-        </div> <!-- end to put content in a row-->          
-      </div> <!--end left content-->
+        <div
+          class=" card col-12-sm col-md-4 col-lg-4 d-flex flex-column rounded-0 border border-white"
+        >
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0  img-right-1"
+              src="assets/images/sp3.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              FIBA World Cup Draw: Quarterfinals Schedule, Live Stream and
+              Latest Odds
+            </h5>
+          </div>
 
-      <!--right content-->
-      <div class="col-lg-4 col-sm-12">
-        <div class="text-uppercase font-weight-bold red-color">newsletter</div>
-        <div class="card d-flex flex-row">
-            <img class="card-img-left newsletter-size" src="assets/images/nl.png" alt="Card image cap">
+          <div
+            class="d-flex flex-row border-bottom border-secondary py-2 rounded-0"
+          >
+            <img
+              class="card-img-top rounded-0 img-right-1 "
+              src="assets/images/sp4.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              USMNT vs. Uruguay: Where to Watch, Live Stream, TV Channel, Odds
+            </h5>
+          </div>
+
+          <div class="d-flex flex-row py-2 border border-white">
+            <img
+              class="card-img-top rounded-0 img-right-1 rounded-0"
+              src="assets/images/sp5.jpg"
+              alt="#"
+            />
+            <h5
+              class="pl-2 text-body font-weight-bold title-15 line-h-18 hover-red"
+            >
+              Monday Night RAW Results (9/9)
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end 10 container-->
+
+    <!--11 container-->
+    <!--subscribe newsletter-->
+    <div class="container mb-3 mt-4">
+      <div class="row">
+        <!--left content-->
+        <div class="col-lg-8 col-sm-12">
+          <div class="text-uppercase font-weight-bold red-color">Subscribe</div>
+          <!--title-->
+          <div class="d-flex flex-row bg-light">
+            <!--to put content in a row-->
+            <div class="subs-left height-mg">
+              <!--magazines-->
+              <img
+                class="pt-3 pl-3"
+                src="assets/images/mg02.jpg"
+                alt="images"
+              />
+              <img class="mg-herb" src="assets/images/mg01.jpg" alt="images" />
+            </div>
+            <!--end magazines-->
+
+            <div class="bg-light subs-right pt-5 ml-2">
+              <!--text and button-->
+              <h5 class="text-body font-weight-bold ml-5">
+                In-depth Stories You Don't See Elsewhere About Topics You Want
+                to Read!
+              </h5>
+              <p class="grey-text ml-5">
+                All Access + Weekly Delivery. Choose A Membership That's Perfect
+                for You!
+              </p>
+              <button
+                type="button"
+                class="btn square-red text-white font-weight-bold rounded-0 text-uppercase ml-5"
+              >
+                Subscribe >
+              </button>
+            </div>
+            <!--end text and button-->
+          </div>
+          <!-- end to put content in a row-->
+        </div>
+        <!--end left content-->
+
+        <!--right content-->
+        <div class="col-lg-4 col-sm-12">
+          <div class="text-uppercase font-weight-bold red-color">
+            newsletter
+          </div>
+          <div class="card d-flex flex-row">
+            <img
+              class="card-img-left newsletter-size"
+              src="assets/images/nl.png"
+              alt="Card image cap"
+            />
             <div class="card-body newsletter-size">
               <h5 class="text-body font-weight-bold">Daily Briefing</h5>
-              <p class="grey-text">Take back your inbox. Sign up for our newsletter and start making sense of the world around you.</p>
-              <button type="button" class="btn square-red text-white font-weight-bold rounded-0 text-uppercase pt-2">sign in ></button>
+              <p class="grey-text">
+                Take back your inbox. Sign up for our newsletter and start
+                making sense of the world around you.
+              </p>
+              <button
+                type="button"
+                class="btn square-red text-white font-weight-bold rounded-0 text-uppercase pt-2"
+              >
+                sign in >
+              </button>
             </div>
+          </div>
         </div>
-      </div> <!--end right content-->
-
-
-    </div> <!--end row-->
-
-  </div>
-
-
-  <!--12 container-->
-  <!--social media-->
-  <div class="container-fluid px-5">
-    <div class="row border-bottom border-light pb-2">
-      <div class="col-sm-12 col-md-9 d-flex flex-sm-column flex-md-row">
-        <img class="logo-size" src="assets/images/logo.png" alt="logo">
-        <p class="text-secondary d-flex align-items-end text-gen title-15">© 2019 Newsweek</p>
+        <!--end right content-->
       </div>
-
-      <div class="col-sm-12 col-md-3">
-        <ul class="d-flex flex-row justify-content-md-end justify-content-sm-start pr-3">
-          <li class="pr-3 icon-size c-pointer"><i class="fab fa-facebook-square"></i></li>
-          <li class="pr-3 icon-size c-pointer"><i class="fab fa-twitter"></i></li>
-          <li class="pr-3 icon-size c-pointer"><i class="fab fa-instagram"></i></li>
-          <li class="pr-3 icon-size c-pointer"><i class="fab fa-tumblr"></i></li>
-          <li class="pr-3 icon-size c-pointer"><i class="fab fa-linkedin-in"></i></li>          
-        </ul>
-      </div>
-
+      <!--end row-->
     </div>
 
-  </div>
+    <!--12 container-->
+    <!--social media-->
+    <div class="container-fluid px-5">
+      <div class="row border-bottom border-light pb-2">
+        <div class="col-sm-12 col-md-9 d-flex flex-sm-column flex-md-row">
+          <img class="logo-size" src="assets/images/logo.png" alt="logo" />
+          <p class="text-secondary d-flex align-items-end text-gen title-15">
+            © 2019 Newsweek
+          </p>
+        </div>
 
+        <div class="col-sm-12 col-md-3">
+          <ul
+            class="d-flex flex-row justify-content-md-end justify-content-sm-start pr-3"
+          >
+            <li class="pr-3 icon-size c-pointer">
+              <i class="fab fa-facebook-square"></i>
+            </li>
+            <li class="pr-3 icon-size c-pointer">
+              <i class="fab fa-twitter"></i>
+            </li>
+            <li class="pr-3 icon-size c-pointer">
+              <i class="fab fa-instagram"></i>
+            </li>
+            <li class="pr-3 icon-size c-pointer">
+              <i class="fab fa-tumblr"></i>
+            </li>
+            <li class="pr-3 icon-size c-pointer">
+              <i class="fab fa-linkedin-in"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <!--footer-->
-  <div class="container-fluid mt-1 mb-1 px-5">
-    <div class="row">
-      <div class="col-sm-12 col-lg-8"> <!--left list-->
-        <ul class="d-flex flex-wrap grey-text">
-          <li class="px-1 black-hover c-pointer">About Us</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Corrections</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Contact Us</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Editorial Guidelines</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Advertise</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Copyright</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Terms & Conditions</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Privacy Policy</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Cookie Policy</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Terms of Sale</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Archive</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Announcements</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Consent preferences</li>
-        </ul>
-      </div><!--end left list-->
+    <!--footer-->
+    <div class="container-fluid mt-1 mb-1 px-5">
+      <div class="row">
+        <div class="col-sm-12 col-lg-8">
+          <!--left list-->
+          <ul class="d-flex flex-wrap grey-text">
+            <li class="px-1 black-hover c-pointer">About Us</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Corrections</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Contact Us</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Editorial Guidelines</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Advertise</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Copyright</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Terms & Conditions</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Privacy Policy</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Cookie Policy</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Terms of Sale</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Archive</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Announcements</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Consent preferences</li>
+          </ul>
+        </div>
+        <!--end left list-->
 
-      <div class="col-sm-12 col-lg-4"> <!--right list-->
-        <ul class="d-flex flex-wrap px-1 grey-text">
-          <li class="px-1 font-weight-bold"> Editions:</li>
-          <li class="px-1 black-hover c-pointer">U.S. Edition</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">日本</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">한국</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Pakistan</li>
-          <li class="px-1">|</li>
-          <li class="px-1 black-hover c-pointer">Polska</li>
-          <li class="px-1 ">|</li>
-          <li class="px-1 black-hover c-pointer">România</li>
-          <li class="px-1">|</li>
-        </ul>
-      </div><!--end right list-->
+        <div class="col-sm-12 col-lg-4">
+          <!--right list-->
+          <ul class="d-flex flex-wrap px-1 grey-text">
+            <li class="px-1 font-weight-bold">Editions:</li>
+            <li class="px-1 black-hover c-pointer">U.S. Edition</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">日本</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">한국</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Pakistan</li>
+            <li class="px-1">|</li>
+            <li class="px-1 black-hover c-pointer">Polska</li>
+            <li class="px-1 ">|</li>
+            <li class="px-1 black-hover c-pointer">România</li>
+            <li class="px-1">|</li>
+          </ul>
+        </div>
+        <!--end right list-->
+      </div>
+      <!--end row-->
+    </div>
+    <!--end footer-->
 
-    </div> <!--end row-->
-
-  </div> <!--end footer-->
-  
-
-
-  
-
-
-  <!-- optional javascript -->
-  <!-- jquery first, then popper.js, then bootstrap js -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh5U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-
-
-</body>
-
+    <!-- optional javascript -->
+    <!-- jquery first, then popper.js, then bootstrap js -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh5U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

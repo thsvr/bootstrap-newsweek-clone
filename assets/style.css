@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+img {
+  cursor: pointer;
+}
+
 .top-logo img {
   height: 75px;
 }
@@ -39,10 +43,6 @@
 .title-gen-1:hover {
   cursor: pointer;
   text-decoration: underline red;
-}
-
-img {
-  cursor: pointer;
 }
 
 .title-15 {
